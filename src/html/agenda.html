@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/agenda.css">
+    <link rel="stylesheet" href="../../assets/css/modal.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <title>veterinario</title>
+</head>
+
+<body>
+    <main>
+        <section class="side-bar">
+            <div class="logo">
+                <div class="imagem"></div>
+                <h1>VetControl</h1>
+            </div>
+            <nav>
+                <a href="../../index.html"><img src="../../assets/images/Home.png" alt="">DashBoard</a>
+                <a href="agenda.html"><img src="../../assets/images/Calendar.png" alt="">Agenda</a>
+                <a href="#"><img src="../../assets/images/Calendar.png" alt="">Painel Financeiro</a>
+                <a href="#"><img src="../../assets/images/Calendar.png" alt="">Estoque</a>
+            </nav>
+        </section>
+
+
+        <div class="main2">
+            <header>
+                <div class="left-side">
+                    <div class="logo">
+                        <div class="imagem"></div>
+                        <h1>VetControl</h1>
+                    </div>
+                    <input type="text">
+                </div>
+                <div class="right-side">
+                    <img class="userImage" src="../../assets/images/User.png" alt="">
+                    <span class="userName">Dr.Ernandes</span>
+                </div>
+                <div class="mobile-modal-button">
+                    <img src="../../assets/images/burguer-icon-mobile.png" alt="">
+                </div>
+            </header>
+
+            <section class="appointments-list">
+                <div class="appointment">
+                    <div class="pet-info">
+                        <img src="../../assets/images/dog.png" alt="">
+                        <h2>Tobias(Labrador)</h2>
+                        <p>Tutor: Caio Cruz</p>
+                    </div>
+                    <div class="buttons">
+                        <button>Confirmado</button>
+                        <button>Nome do Serviço</button>
+                    </div>
+                    <div class="date-info">
+                        <div><span>Horário:</span><span>9:00 - 10:00</span></div>
+                        <div><span>sala:</span><span>Consultorio 2</span></div>
+                    </div>
+                </div>
+                <div class="appointment">
+                    <div class="pet-info">
+                        <img src="../../assets/images/dog.png" alt="">
+                        <h2>Tobias(Labrador)</h2>
+                        <p>Tutor: Caio Cruz</p>
+                    </div>
+                    <div class="buttons">
+                        <button>Confirmado</button>
+                        <button>Nome do Serviço</button>
+                    </div>
+                    <div class="date-info">
+                        <div><span>Horário:</span><span>9:00 - 10:00</span></div>
+                        <div><span>sala:</span><span>Consultorio 2</span></div>
+                    </div>
+                </div>
+                <div class="appointment">
+                    <div class="pet-info">
+                        <img src="../../assets/images/cat.png" alt="">
+                        <h2>Tobias(Labrador)</h2>
+                        <p>Tutor: Caio Cruz</p>
+                    </div>
+                    <div class="buttons">
+                        <button>Confirmado</button>
+                        <button>Nome do Serviço</button>
+                    </div>
+                    <div class="date-info">
+                        <div><span>Horário:</span><span>9:00 - 10:00</span></div>
+                        <div><span>sala:</span><span>Consultorio 2</span></div>
+                    </div>
+                </div>
+                <div class="appointment">
+                    <div class="pet-info">
+                        <img src="../../assets/images/dog.png" alt="">
+                        <h2>Tobias(Labrador)</h2>
+                        <p>Tutor: Caio Cruz</p>
+                    </div>
+                    <div class="buttons">
+                        <button>Confirmado</button>
+                        <button>Nome do Serviço</button>
+                    </div>
+                    <div class="date-info">
+                        <div><span>Horário:</span><span>9:00 - 10:00</span></div>
+                        <div><span>sala:</span><span>Consultorio 2</span></div>
+                    </div>
+                </div>
+
+
+
+            </section>
+
+        </div>
+        <div class="add-pet"><span>+</span></div>
+    </main>
+    <div class="modal-add-pet-profile">
+        <div class="close">X</div>
+        <div class="profile-pet-modal">
+            <p>Especies:</p>
+            <div class="especies">
+                <img class="especie" id="especieGato" src="../../assets/images/cat.png" alt="Gato">
+                <img class="especie" id="especieCachorro" src="../../assets/images/dog.png" alt="Cachorro">
+                <img class="especie" id="especieHamster" src="../../assets/images/hamster.png" alt="Hamster">
+                <img class="especie" id="especiePassaro" src="../../assets/images/bird.png" alt="Passaro">
+            </div>
+        </div>
+        <form action="">
+            <div class="appointment-form">
+                <div>
+                    <label for="">Nome do pet</label>
+                    <input type="text" id="petNome" value="">
+                </div>
+                <div>
+                    <label for="">Idade do Pet</label>
+                    <input type="number" id="petAnoNascimento" value="">
+                </div>
+                <div>
+                    <label for="">Raça</label>
+                    <select name="" id="petRaca" disabled>
+                        <option value="">Selecione</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="">Alergias</label>
+                    <input type="text" id="petAlergias" value="">
+                </div>
+                <div>
+                    <label for="">Vacinas Tomadas</label>
+                    <input type="text" id="petVacinas" value="">
+                </div>
+            </div>
+
+            <div class="appointment-form">
+                <div>
+                    <label for="">Nome do Tutor</label>
+                    <input id="tutorNome" type="text" value="">
+                </div>
+                <div>
+                    <label for="">CPF</label>
+                    <input type="number" id="cpf" value="">
+                </div>
+                <div>
+                    <label for="">Telefone</label>
+                    <input type="number" id="telefone" value="">
+                </div>
+                <div>
+                    <label for="">Endereço</label>
+                    <input type="text" id="endereco" value="">
+                </div>
+            </div>
+
+            <div class="appointment-form">
+                <div>
+                    <label for="">Tipo de Consulta</label>
+                    <input type="text" id="tipoConsulta" value="">
+                </div>
+                <div>
+                    <label for="">Data</label>
+                    <input type="date"  min='1899-01-01' max='2026-01-01' id="dataConsulta" value="">
+                </div>
+                <div>
+                    <label for="">Horário</label>
+                    <input type="time" id="horario" value="">
+                </div>
+                <div>
+                    <label for="">Doutor(a)</label>
+                    <input type="text" id="doutor" value="">
+                </div>
+
+                <button>cofirmar</button>
+            </div>
+        </form>
+
+
+    </div>
+
+    <script src="../js/modalAgenda.js"></script>
+    <script src="../js/sideBar.js"></script>
+</body>
+
+</html>
