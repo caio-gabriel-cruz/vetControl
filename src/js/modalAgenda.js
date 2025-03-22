@@ -2,26 +2,83 @@ document.addEventListener("DOMContentLoaded", function () {
   const addProfilePet = document.querySelector(".add-pet");
   const modalAddProfilePet = document.querySelector(".modal-add-pet-profile");
   const main = document.querySelector("main");
-  const dateInput = document.querySelector('input[type=date');
+  const dateInput = document.querySelector("input[type=date");
   const modalAddProfilePetClose = document.querySelector(
     ".modal-add-pet-profile .close"
   );
-  const dataAtual = new Date;
+  const especiesGato = {
+    0: "Selecione a Raça",
+    1: "Persa",
+    2: "Maine Coon",
+    3: "Siamês",
+    4: "Bengal",
+    5: "Sphynx",
+    6: "Ragdoll",
+    7: "Birman",
+    8: "Scottish Fold",
+    9: "Britânico de Pelo Curto",
+    10: "Sem raça definida",
+  };
+  const especiesCachorro = {
+    0: "Selecione a Raça",
+    1: "Labrador",
+    2: "Poodle",
+    3: "Bulldog",
+    4: "Beagle",
+    5: "Golden Retriever",
+    6: "Chihuahua",
+    7: "Shih Tzu",
+    8: "Pastor Alemão",
+    9: "Boxer",
+    10: "Dachshund",
+    11: "Yorkshire Terrier",
+    12: "Cocker Spaniel",
+    13: "Maltês",
+    14: "Rottweiler",
+    15: "Doberman",
+    16: "Pinscher",
+    17: "Husky Siberiano",
+    17: "Sem raça definida",
+  };
+  const especiesPassaro = {
+    0: "Selecione a Raça",
+    1: "Papagaio",
+    2: "Periquito",
+    3: "Calopsita",
+    4: "Ninfa",
+    5: "Agapornis",
+    6: "Canário",
+    7: "Cacatua",
+    8: "Curió",
+    9: "Tico-tico",
+    10: "Arara",
+  };
+  const especiesHamster = {
+    0: "Selecione a Raça",
+    1: "Porquinho-da-índia",
+    2: "Hamster",
+    3: "Coelho",
+    4: "Gerbil",
+    5: "Chinchila",
+    6: "Degus",
+    7: "Camundongo",
+  };
+
+  const dataAtual = new Date();
   let diaAtual = dataAtual.getDate();
   let mesAtual = dataAtual.getMonth() + 1;
   let anoAtual = dataAtual.getFullYear();
   mesAtual = mesAtual < 10 ? `0${mesAtual}` : mesAtual;
   diaAtual = diaAtual < 10 ? `0${diaAtual}` : diaAtual;
-  dateInput.setAttribute('max', `${anoAtual}-${mesAtual}-${diaAtual}`);
+  dateInput.setAttribute("min", `${anoAtual}-${mesAtual}-${diaAtual}`);
   const formAddPet = modalAddProfilePet.querySelector("form");
 
-
-    // Exibe o modal ao clicar no botão de adicionar pet
-    addProfilePet.addEventListener("click", () => {
-      console.log("click");
-      modalAddProfilePet.style.display = "block";
-      main.classList.add("invisible");
-    });
+  // Exibe o modal ao clicar no botão de adicionar pet
+  addProfilePet.addEventListener("click", () => {
+    console.log("click");
+    modalAddProfilePet.style.display = "block";
+    main.classList.add("invisible");
+  });
 
   // Função carrega os dados dos cards
   function carregaDados() {
@@ -176,7 +233,53 @@ document.addEventListener("DOMContentLoaded", function () {
       especie.classList.toggle("selected");
       especieSelected = especie.id;
 
-      petRaca.removeAttribute('disabled');
+      petRaca.removeAttribute("disabled");
+      switch (especieSelected) {
+        case "especieGato":
+          petRaca.innerHTML = "";
+          for (const chave in especiesGato) {
+            if (especiesGato.hasOwnProperty(chave)) {
+              const option = document.createElement("option");
+              option.value = chave; // Valor que será enviado
+              option.textContent = especiesGato[chave]; // Texto a ser exibido
+              petRaca.appendChild(option); // Adicionando a opção ao select
+            }
+          }
+          break;
+        case "especieCachorro":
+          petRaca.innerHTML = "";
+          for (const chave in especiesCachorro) {
+            if (especiesCachorro.hasOwnProperty(chave)) {
+              const option = document.createElement("option");
+              option.value = chave; // Valor que será enviado
+              option.textContent = especiesCachorro[chave]; // Texto a ser exibido
+              petRaca.appendChild(option); // Adicionando a opção ao select
+            }
+          }
+          break;
+        case "especiePassaro":
+          petRaca.innerHTML = "";
+          for (const chave in especiesPassaro) {
+            if (especiesPassaro.hasOwnProperty(chave)) {
+              const option = document.createElement("option");
+              option.value = chave; // Valor que será enviado
+              option.textContent = especiesPassaro[chave]; // Texto a ser exibido
+              petRaca.appendChild(option); // Adicionando a opção ao select
+            }
+          }
+          break;
+        case "especieHamster":
+          petRaca.innerHTML = "";
+          for (const chave in especiesHamster) {
+            if (especiesHamster.hasOwnProperty(chave)) {
+              const option = document.createElement("option");
+              option.value = chave; // Valor que será enviado
+              option.textContent = especiesHamster[chave]; // Texto a ser exibido
+              petRaca.appendChild(option); // Adicionando a opção ao select
+            }
+          }
+          break;
+      }
     });
   });
 
@@ -255,8 +358,8 @@ document.addEventListener("DOMContentLoaded", function () {
     especies.forEach((especie) => {
       especie.classList.remove("selected");
     });
-    petRaca.setAttribute('disabled', 'true');
+    petRaca.setAttribute("disabled", "true");
 
-    console.log(diaAtual, mesAtual)
+    console.log(diaAtual, mesAtual);
   });
 });
