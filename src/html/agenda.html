@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../assets/css/agenda.css">
     <link rel="stylesheet" href="../../assets/css/modal.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
-    <title>veterinario</title>
+    <title>VetControl - Agenda</title>
 </head>
 
 <body>
@@ -19,10 +19,10 @@
                 <h1>VetControl</h1>
             </div>
             <nav>
-                <a href="../../index.html"><img src="../../assets/images/Home.png" alt="">DashBoard</a>
+                <a href="../../index.html"><img src="../../assets/images/Home.png" alt="">Lista de Pets</a>
                 <a href="agenda.html"><img src="../../assets/images/Calendar.png" alt="">Agenda</a>
-                <a href="#"><img src="../../assets/images/Calendar.png" alt="">Painel Financeiro</a>
-                <a href="#"><img src="../../assets/images/Calendar.png" alt="">Estoque</a>
+                <!-- <a href="#"><img src="../../assets/images/Calendar.png" alt="">Painel Financeiro</a>
+                <a href="#"><img src="../../assets/images/Calendar.png" alt="">Estoque</a> -->
             </nav>
         </section>
 
@@ -34,7 +34,6 @@
                         <div class="imagem"></div>
                         <h1>VetControl</h1>
                     </div>
-                    <input type="text">
                 </div>
                 <div class="right-side">
                     <img class="userImage" src="../../assets/images/User.png" alt="">
@@ -140,6 +139,18 @@
                     <select name="" id="petRaca" disabled></select>
                 </div>
                 <div>
+                    <label for="">Sexo</label>
+                    <select name="" id="">
+                        <option value="">Selecione o sexo</option>
+                        <option value="">Macho</option>
+                        <option value="">Femea</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="">Peso do pet</label>
+                    <input type="text" minlength="1" maxlength="4" id="petVacinas" placeholder="Peso em kilos" value="">
+                </div>
+                <div>
                     <label for="">Alergias</label>
                     <input type="text" id="petAlergias" value="">
                 </div>
@@ -171,7 +182,12 @@
             <div class="appointment-form">
                 <div>
                     <label for="">Tipo de Consulta</label>
-                    <input type="text" id="tipoConsulta" value="">
+                    <select name="" id="">
+                        <option value="">Selecione uma consulta</option>
+                        <option value="">Consulta de Rotina</option>
+                        <option value="">Primeira Consulta</option>
+                        <option value="">Consulta Especializada</option>
+                    </select>
                 </div>
                 <div>
                     <label for="">Data</label>
