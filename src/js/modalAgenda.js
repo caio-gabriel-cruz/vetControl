@@ -223,6 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   const especies = document.querySelectorAll(".especie");
   const petRaca = document.getElementById("petRaca");
+  const petPeso = document.getElementById('petPeso');
   let especieSelected = 0;
 
   especies.forEach((especie) => {
@@ -281,6 +282,14 @@ document.addEventListener("DOMContentLoaded", function () {
           break;
       }
     });
+  });
+
+  let control = 1;
+  petPeso.addEventListener('input', () => {
+      if(petPeso.value.length == 3 && petPeso.value.includes('.') == false){
+        petPeso.value += '.';
+        console.log('s');
+    }
   });
 
   // Botão submit
