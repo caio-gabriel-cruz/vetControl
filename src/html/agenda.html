@@ -128,19 +128,19 @@
             <div class="appointment-form">
                 <div>
                     <label for="">Nome do pet</label>
-                    <input type="text" id="petNome" value="">
+                    <input type="text" id="petNome" value="" required>
                 </div>
                 <div>
                     <label for="">Idade do Pet</label>
-                    <input type="number" id="petAnoNascimento" value="">
+                    <input type="number" id="petAnoNascimento" value="" required>
                 </div>
                 <div>
                     <label for="">Raça</label>
-                    <select name="" id="petRaca" disabled></select>
+                    <select name="" id="petRaca" disabled required></select>
                 </div>
                 <div>
                     <label for="">Sexo</label>
-                    <select name="" id="">
+                    <select name="" id="" required>
                         <option value="">Selecione o sexo</option>
                         <option value="">Macho</option>
                         <option value="">Femea</option>
@@ -148,41 +148,51 @@
                 </div>
                 <div>
                     <label for="">Peso do pet</label>
-                    <input type="text" maxlength="5" id="petPeso" placeholder="Peso em kilos" pattern="\d{1,5}" value="">
+                    <input type="text" maxlength="5" id="petPeso" placeholder="Peso em kilos" value="" required>
                 </div>
                 <div>
-                    <label for="">Alergias</label>
-                    <input type="text" id="petAlergias" value="">
+                    <label for="">Alergia</label>
+                    <select name="" id="alergiasPet" required>
+                        <option value="">Selecione a alergia</option>
+                        <option value="">Tem alergia</option>
+                        <option value="">não tem alergia</option>
+                        <option value="">não sei se tem alergia</option>
+                    </select>
                 </div>
                 <div>
-                    <label for="">Vacinas Tomadas</label>
-                    <input type="text" id="petVacinas" value="">
+                    <label for="">Status de Vacinação</label>
+                    <select name="" id="petVacinas" required>
+                        <option value="">Selecione o status</option>
+                        <option value="">Em dia</option>
+                        <option value="">Precisa tomar</option>
+                        <option value="">Nunca tomou</option>
+                    </select>
                 </div>
             </div>
 
             <div class="appointment-form">
                 <div>
                     <label for="">Nome do Tutor</label>
-                    <input id="tutorNome" type="text" value="">
+                    <input id="tutorNome" type="text" value="" required>
                 </div>
                 <div>
                     <label for="">CPF</label>
-                    <input type="number" id="cpf" value="">
+                    <input type="number" id="cpf" value="" required>
                 </div>
                 <div>
                     <label for="">Telefone</label>
-                    <input type="number" id="telefone" value="">
+                    <input type="text" id="telefone" minlength="15" maxlength="15" value="" required>
                 </div>
                 <div>
                     <label for="">Endereço</label>
-                    <input type="text" id="endereco" value="">
+                    <input type="text" id="endereco" value="" required>
                 </div>
             </div>
 
             <div class="appointment-form">
                 <div>
                     <label for="">Tipo de Consulta</label>
-                    <select name="" id="">
+                    <select name="" id="tipoConsulta" required>
                         <option value="">Selecione uma consulta</option>
                         <option value="">Consulta de Rotina</option>
                         <option value="">Primeira Consulta</option>
@@ -191,15 +201,29 @@
                 </div>
                 <div>
                     <label for="">Data</label>
-                    <input type="date" min='1899-01-01' max='2026-01-01' id="dataConsulta" value="">
+                    <input type="date" min='1899-01-01' max='2026-01-01' id="dataConsulta" required value="">
                 </div>
                 <div>
                     <label for="">Horário</label>
-                    <input type="time" id="horario" value="">
+                    <select name="" id="" required>
+                        <option value="">Seleione um horário</option>
+                        <option value="">08:00</option>
+                        <option value="">08:30</option>
+                        <option value="">09:00</option>
+                        <option value="">09:30</option>
+                        <option value="">10:00</option>
+                        <option value="">10:30</option>
+                        <option value="">11:00</option>
+                        <option value="">11:30</option>
+                        <option value="">12:00</option>
+                        <option value="">12:30</option>
+                    </select>
                 </div>
                 <div>
                     <label for="">Doutor(a)</label>
-                    <input type="text" id="doutor" value="">
+                    <select name="" id="doutor">
+                        <option value="">Selecione o doutor</option>
+                    </select>
                 </div>
 
                 <button>cofirmar</button>

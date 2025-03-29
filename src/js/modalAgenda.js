@@ -223,7 +223,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   const especies = document.querySelectorAll(".especie");
   const petRaca = document.getElementById("petRaca");
-  const petPeso = document.getElementById('petPeso');
+  const petPeso = document.getElementById("petPeso");
+  const telefone = document.getElementById("telefone");
   let especieSelected = 0;
 
   especies.forEach((especie) => {
@@ -284,11 +285,43 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // formatação de petPeso
   let control = 1;
-  petPeso.addEventListener('input', () => {
-      if(petPeso.value.length == 3 && petPeso.value.includes('.') == false){
-        petPeso.value += '.';
-        console.log('s');
+  petPeso.addEventListener("input", () => {
+    petPeso.addEventListener("keydown", function (event) {
+      if (event.key === "Backspace") {
+        control = 2;
+      }
+    });
+    petPeso.addEventListener("keydown", function (event) {
+      if (event.key !== "Backspace") {
+        control = 1;
+      }
+    });
+    if (control == 1) {
+      if (petPeso.value.length == 3) {
+        petPeso.value += ".";
+      }
+    }
+  });
+
+  // formatação de telefone
+  let controlTel = 1;
+  telefone.addEventListener("input", () => {
+    if (controlTel == 1) {
+      if (telefone.value.length == 2) {
+        telefone.value = `(${telefone.value}) `;
+      }
+      if (telefone.value.length == 10) {
+        telefone.value += "-";
+      }
+    }
+  });
+  telefone.addEventListener("keydown", function (event) {
+    if (event.key === "Backspace") {
+      controlTel = 2;
+    } else {
+      controlTel = 1;
     }
   });
 
@@ -303,11 +336,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const endereco = document.getElementById("endereco").value;
     const petNome = document.getElementById("petNome").value;
     const petAnoNascimento = document.getElementById("petAnoNascimento").value;
-    const petAlergias = document.getElementById("petAlergias").value;
+    const petAlergias = document.getElementById("alergiasPet").value;
     const petVacinas = document.getElementById("petVacinas").value;
     const tipoConsulta = document.getElementById("tipoConsulta").value;
-    const dataConsulta = inputDate.value;
+    const dataConsulta = document.getElementById("dataConsulta").value;
     const doutor = document.getElementById("doutor").value;
+    let telefoneNum = document.getElementById("telefone").value;
 
     // valida especie
     if (especieSelected === 0) {
@@ -331,6 +365,18 @@ document.addEventListener("DOMContentLoaded", function () {
     especies.forEach((especie) => {
       especie.classList.remove("selected");
     });
+
+    telefoneNum = telefoneNum.replace("-", "");
+    telefoneNum = telefoneNum.replace("(", "");
+    telefoneNum = telefoneNum.replace(") ", "");
+    console.log(telefoneNum);
+    if (/[a-zA-Z]/.test(telefoneNum)) {
+      console.log("Campo nome contém caracteres inválidos");
+      return null;
+    } else {
+      telefoneNum = parseFloat(telefoneNum);
+      console.log(telefoneNum);
+    }
 
     // Salva os dados no LS
     salvaDados({
