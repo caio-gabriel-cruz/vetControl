@@ -73,9 +73,11 @@ document.addEventListener("DOMContentLoaded", function () {
   dateInput.setAttribute("min", `${anoAtual}-${mesAtual}-${diaAtual}`);
   const formAddPet = modalAddProfilePet.querySelector("form");
 
+  // Variável que substitui o uso do localStorage
+  let pets = [];
+
   // Exibe o modal ao clicar no botão de adicionar pet
   addProfilePet.addEventListener("click", () => {
-    console.log("click");
     modalAddProfilePet.style.display = "block";
     main.classList.add("invisible");
   });
@@ -86,10 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!appointmentsList) return; // Verifica se o elemento existe
     appointmentsList.innerHTML = ""; // Limpa a lista
 
-    // Recupera os cards
-    const pets = JSON.parse(localStorage.getItem("pets")) || [];
-
-    // Cria os cards
+    // Cria os cards a partir da variável pets
     pets.forEach((pet) => {
       const appointmentCard = document.createElement("div");
       appointmentCard.classList.add("appointment");
@@ -99,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const appointmentImg = document.createElement("img");
       appointmentImg.alt = "";
-      // Se a espécie for "gato" (independentemente de maiúsculas/minúsculas), usa a imagem do gato
       appointmentImg.src =
         pet.especie === "gato"
           ? "../../assets/images/cat.png"
@@ -159,68 +157,67 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Função para salvar os dados no LS
+  // Função para salvar os dados na variável pets
   function salvaDados(pet) {
-    let pets = JSON.parse(localStorage.getItem("pets")) || [];
     pets.push(pet);
-    localStorage.setItem("pets", JSON.stringify(pets));
   }
 
-  // Função para validar os nomes
-  const validaNome = (nome) => {
-    if (/\d/.test(nome)) {
-      console.log("Campo nome contém caracteres inválidos");
-      return null;
-    }
+  // // Função para validar os nomes
+  // const validaNome = (nome) => {
+  //   if (/\d/.test(nome)) {
+  //     console.log("Campo nome contém caracteres inválidos");
+  //     return null;
+  //   }
 
-    if (nome.length < 3) {
-      console.log("Campo nome vazio");
-      return null;
-    }
+  //   if (nome.length < 3) {
+  //     console.log("Campo nome vazio");
+  //     return null;
+  //   }
 
-    return nome;
-  };
+  //   return nome;
+  // };
 
-  // Função para validar o CPF
-  function validaCpf(cpfValue) {
-    if (cpfValue.length !== 11) {
-      console.log("CPF inválido");
-      return false;
-    }
+  // // Função para validar o CPF
+  // function validaCpf(cpfValue) {
+  //   if (cpfValue.length !== 11) {
+  //     console.log("CPF inválido");
+  //     return false;
+  //   }
 
-    function proximoDigitoVerificador(cpfIncompleto) {
-      let somatoria = 0;
+  //   function proximoDigitoVerificador(cpfIncompleto) {
+  //     let somatoria = 0;
 
-      for (let i = 0; i < cpfIncompleto.length; i++) {
-        let digitoAtual = cpfIncompleto.charAt(i);
-        let constante = cpfIncompleto.length + 1 - i;
-        somatoria += Number(digitoAtual) * constante;
-      }
-      const resto = somatoria % 11;
+  //     for (let i = 0; i < cpfIncompleto.length; i++) {
+  //       let digitoAtual = cpfIncompleto.charAt(i);
+  //       let constante = cpfIncompleto.length + 1 - i;
+  //       somatoria += Number(digitoAtual) * constante;
+  //     }
+  //     const resto = somatoria % 11;
 
-      return resto < 2 ? "0" : (11 - resto).toString();
-    }
+  //     return resto < 2 ? "0" : (11 - resto).toString();
+  //   }
 
-    let primeiroDigitoVerificador = proximoDigitoVerificador(
-      cpfValue.substring(0, 9)
-    );
-    let segundoDigitoVerificador = proximoDigitoVerificador(
-      cpfValue.substring(0, 9) + primeiroDigitoVerificador
-    );
+  //   let primeiroDigitoVerificador = proximoDigitoVerificador(
+  //     cpfValue.substring(0, 9)
+  //   );
+  //   let segundoDigitoVerificador = proximoDigitoVerificador(
+  //     cpfValue.substring(0, 9) + primeiroDigitoVerificador
+  //   );
 
-    let cpfCorreto =
-      cpfValue.substring(0, 9) +
-      primeiroDigitoVerificador +
-      segundoDigitoVerificador;
+  //   let cpfCorreto =
+  //     cpfValue.substring(0, 9) +
+  //     primeiroDigitoVerificador +
+  //     segundoDigitoVerificador;
 
-    if (cpfValue !== cpfCorreto) {
-      console.log("CPF inválido");
-      return false;
-    } else {
-      console.log("CPF válido");
-      return true;
-    }
-  }
+  //   if (cpfValue !== cpfCorreto) {
+  //     console.log("CPF inválido");
+  //     return false;
+  //   } else {
+  //     console.log("CPF válido");
+  //     return true;
+  //   }
+  // }
+
   const especies = document.querySelectorAll(".especie");
   const petRaca = document.getElementById("petRaca");
   const petPeso = document.getElementById("petPeso");
@@ -242,9 +239,9 @@ document.addEventListener("DOMContentLoaded", function () {
           for (const chave in especiesGato) {
             if (especiesGato.hasOwnProperty(chave)) {
               const option = document.createElement("option");
-              option.value = chave; // Valor que será enviado
-              option.textContent = especiesGato[chave]; // Texto a ser exibido
-              petRaca.appendChild(option); // Adicionando a opção ao select
+              option.value = chave;
+              option.textContent = especiesGato[chave];
+              petRaca.appendChild(option);
             }
           }
           break;
@@ -253,9 +250,9 @@ document.addEventListener("DOMContentLoaded", function () {
           for (const chave in especiesCachorro) {
             if (especiesCachorro.hasOwnProperty(chave)) {
               const option = document.createElement("option");
-              option.value = chave; // Valor que será enviado
-              option.textContent = especiesCachorro[chave]; // Texto a ser exibido
-              petRaca.appendChild(option); // Adicionando a opção ao select
+              option.value = chave;
+              option.textContent = especiesCachorro[chave];
+              petRaca.appendChild(option);
             }
           }
           break;
@@ -264,9 +261,9 @@ document.addEventListener("DOMContentLoaded", function () {
           for (const chave in especiesPassaro) {
             if (especiesPassaro.hasOwnProperty(chave)) {
               const option = document.createElement("option");
-              option.value = chave; // Valor que será enviado
-              option.textContent = especiesPassaro[chave]; // Texto a ser exibido
-              petRaca.appendChild(option); // Adicionando a opção ao select
+              option.value = chave;
+              option.textContent = especiesPassaro[chave];
+              petRaca.appendChild(option);
             }
           }
           break;
@@ -275,9 +272,9 @@ document.addEventListener("DOMContentLoaded", function () {
           for (const chave in especiesHamster) {
             if (especiesHamster.hasOwnProperty(chave)) {
               const option = document.createElement("option");
-              option.value = chave; // Valor que será enviado
-              option.textContent = especiesHamster[chave]; // Texto a ser exibido
-              petRaca.appendChild(option); // Adicionando a opção ao select
+              option.value = chave;
+              option.textContent = especiesHamster[chave];
+              petRaca.appendChild(option);
             }
           }
           break;
@@ -329,7 +326,6 @@ document.addEventListener("DOMContentLoaded", function () {
   formAddPet.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Dados input
     const tutorNome = document.getElementById("tutorNome").value;
     const cpf = document.getElementById("cpf").value;
     const telefone = document.getElementById("telefone").value;
@@ -343,42 +339,37 @@ document.addEventListener("DOMContentLoaded", function () {
     const doutor = document.getElementById("doutor").value;
     let telefoneNum = document.getElementById("telefone").value;
 
-    // valida especie
-    if (especieSelected === 0) {
-      console.log("sem selecionar");
-      event.preventDefault;
-      return null;
-    }
+    // // valida especie
+    // if (especieSelected === 0) {
+    //   console.log("sem selecionar");
+    //   event.preventDefault;
+    //   return null;
+    // }
 
-    console.log(especieSelected);
+    // const possuiNomePetValidado = validaNome(petNome);
+    // const possuiNomeTutorValidado = validaNome(tutorNome);
 
-    const possuiNomePetValidado = validaNome(petNome);
-    const possuiNomeTutorValidado = validaNome(tutorNome);
+    // if (!possuiNomePetValidado || !possuiNomeTutorValidado) return null;
 
-    if (!possuiNomePetValidado || !possuiNomeTutorValidado) return null;
+    // if (!validaCpf(cpf)) {
+    //   console.log("CPF inválido");
+    //   return;
+    // }
+    // especies.forEach((especie) => {
+    //   especie.classList.remove("selected");
+    // });
 
-    // Valida o CPF
-    if (!validaCpf(cpf)) {
-      console.log("CPF inválido");
-      return;
-    }
-    especies.forEach((especie) => {
-      especie.classList.remove("selected");
-    });
+    // telefoneNum = telefoneNum.replace("-", "");
+    // telefoneNum = telefoneNum.replace("(", "");
+    // telefoneNum = telefoneNum.replace(") ", "");
+    // if (/[a-zA-Z]/.test(telefoneNum)) {
+    //   console.log("Campo nome contém caracteres inválidos");
+    //   return null;
+    // } else {
+    //   telefoneNum = parseFloat(telefoneNum);
+    // }
 
-    telefoneNum = telefoneNum.replace("-", "");
-    telefoneNum = telefoneNum.replace("(", "");
-    telefoneNum = telefoneNum.replace(") ", "");
-    console.log(telefoneNum);
-    if (/[a-zA-Z]/.test(telefoneNum)) {
-      console.log("Campo nome contém caracteres inválidos");
-      return null;
-    } else {
-      telefoneNum = parseFloat(telefoneNum);
-      console.log(telefoneNum);
-    }
-
-    // Salva os dados no LS
+    // Salva os dados na variável pets
     salvaDados({
       especieSelected,
       tutorNome,
@@ -406,6 +397,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Carrega após carregar a página
   carregaDados();
+
   // Fecha o modal quando clica no "X"
   modalAddProfilePetClose.addEventListener("click", () => {
     modalAddProfilePet.style.display = "none";
@@ -414,7 +406,5 @@ document.addEventListener("DOMContentLoaded", function () {
       especie.classList.remove("selected");
     });
     petRaca.setAttribute("disabled", "true");
-
-    console.log(diaAtual, mesAtual);
   });
 });
