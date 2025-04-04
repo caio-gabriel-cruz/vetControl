@@ -15,14 +15,13 @@
     <main>
         <section class="side-bar">
             <div class="logo">
-                <div class="imagem"></div>
-                <h1>VetControl</h1>
+                <img src="../../assets/images/logo.png" class="imagem" alt="">
             </div>
             <nav>
-                <a href="../../index.html"><img src="../../assets/images/Home.png" alt="">Lista de Pets</a>
-                <a href="agenda.html"><img src="../../assets/images/Calendar.png" alt="">Agenda</a>
-                <!-- <a href="#"><img src="../../assets/images/Calendar.png" alt="">Painel Financeiro</a>
-                <a href="#"><img src="../../assets/images/Calendar.png" alt="">Estoque</a> -->
+                <a href="index.html"><img src="../../assets/images/home.png" alt="">Lista de Pets</a>
+                <a href="src/html/agenda.html"><img src="../../assets/images/calendar.png" alt="">Agenda</a>
+                <a href="src/html/estoque.html"><img src="../../assets/images/stock.png" alt="">Estoque</a>
+                <a href="src/html/financeiro.html"><img src="../../assets/images/finance.png" alt="">Painel Financeiro</a>
             </nav>
         </section>
 
@@ -44,6 +43,7 @@
                 </div>
             </header>
 
+            <main>
             <section class="appointments-list">
                 <div class="appointment">
                     <div class="pet-info">
@@ -112,6 +112,7 @@
 
         </div>
         <div class="add-pet"><span>+</span></div>
+        </main>
     </main>
     <div class="modal-add-pet-profile">
         <div class="close">X</div>
@@ -221,8 +222,7 @@
                 </div>
                 <div>
                     <label for="">Doutor(a)</label>
-                    <select name="" id="doutor">
-                        <option value="">Selecione o doutor</option>
+                    <input type="text" id="doutor">
                     </select>
                 </div>
                 
