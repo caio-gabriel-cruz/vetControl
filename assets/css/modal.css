@@ -11,7 +11,7 @@
     opacity: 1 !important;
 }
 
-.modal-dashboard .close{
+.close{
     position: relative;
     left: 95%;
     display: flex;
@@ -26,7 +26,7 @@
     transition: 0.2s;
 }
 
-.modal-dashboard .close:hover{
+.close:hover{
     background-color: var(--gray-500);
 }
 
@@ -251,23 +251,66 @@
     background-color: var(--button);
 }
 
-
-
-.modal-add-pet-profile .close{
-    position: relative;
-    left: 95%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15px;
-    height: 15px;
+.modal-add-item{
+    min-width: 900px;
+    max-height: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--gray-500);
+    background-color: var(--blue-800);
     color: var(--white);
-    border-radius: 100%;
-    font-size: 10px;
-    cursor: pointer;
+    padding: 30px;
+    display: none;
+}
+
+.modal-add-item form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+    color: var(--white);
+}
+
+.modal-add-item form .table-add{
+    border-radius: 8px;
+    display: flex;
+    width: 100%;
+    background-color: var(--blue-700);
+    padding: 20px 10px 20px 10px;
+}
+
+.modal-add-item form .table-add .colunm-item{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--gray-500);
+    align-items: center;
+}
+
+.modal-add-item form .table-add .colunm-item p{
+    margin-bottom: 20px;
+}
+
+.modal-add-item form .table-add .colunm-item input, .modal-add-item form .table-add select{
+    padding: 4px;
+}
+
+.modal-add-item form button{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    width: 150px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--button);
+    background-color: transparent;
+    color: var(--white);
     transition: 0.2s;
 }
 
-.modal-add-pet-profile .close:hover{
-    background-color: var(--gray-500);
+.modal-add-item button:hover{
+    background-color: var(--button);
 }

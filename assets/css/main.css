@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: "Roboto", sans-serif; 
 }
 
 :root{
@@ -33,6 +33,10 @@ button{
     cursor: pointer;
 }
 
+input{
+    outline: none;
+}
+
 body{
     background-color: var(--blue-700);
 }
@@ -42,14 +46,13 @@ body{
 }
 
 .main2 main{
-    height: 100vh;
     display: flex;
     flex-direction: column;
     border-top: 1px solid black;
     border-left: 1px solid black;
 }
 
-header{
+header.top-bar{
     min-height: 80px;
     display: flex;
     align-items: center;
@@ -59,18 +62,18 @@ header{
     color: white;
 }
 
-header .left-side{
+header.top-bar .left-side{
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 45%;
 }
 
-header .left-side .logo{
+header.top-bar .left-side .logo{
     display: none;
 }
 
-header .right-side{
+header.top-bar .right-side{
     display: flex;
     align-items: center;
     width: 55%;
@@ -115,13 +118,8 @@ main{
     opacity: 0.5;
 }
 
-.ghost{
-    width: 300px;
-    height: 100vh;
-}
-
 .side-bar{
-    min-width: 15%;
+    min-width: 20%;
     height: 100vh;
     background-color: var(--blue-800);
     position: sticky;
@@ -159,3 +157,4 @@ main{
     height: 50px;
     cursor: pointer;
 }
+

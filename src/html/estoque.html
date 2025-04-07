@@ -2,11 +2,16 @@
 <html lang="pt-BR">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="../../assets/css/modal.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/estoque.css">
     <title>VetControl - Lista de Pets</title>
 </head>
 
@@ -17,7 +22,7 @@
                 <img src="../../assets/images/logo.png" class="imagem" alt="">
             </div>
             <nav>
-                <a href="../../index.html"><img src="../../assets/images/home.png" alt="">Lista de Pets</a>
+                <a href="lista-pets.html"><img src="../../assets/images/home.png" alt="">Lista de Pets</a>
                 <a href="agenda.html"><img src="../../assets/images/calendar.png" alt="">Agenda</a>
                 <a href="estoque.html"><img src="../../assets/images/stock.png" alt="">Estoque</a>
                 <a href="financeiro.html"><img src="../../assets/images/finance.png" alt="">Painel Financeiro</a>
@@ -26,7 +31,7 @@
 
 
         <div class="main2">
-            <header>
+            <header class="top-bar">
                 <div class="left-side">
                     <div class="logo">
                         <div class="imagem"></div>
@@ -38,16 +43,262 @@
                     <span class="userName">Dr.Ernandes</span>
                 </div>
                 <div class="mobile-modal-button">
-                    <img src="assets/images/burguer-icon-mobile.png" alt="">
+                    <img src="../../assets/images/burguer-icon-mobile.png" alt="">
                 </div>
             </header>
             <main>
-           
+                <button class="add-item">Adicionar Item</button>
+                <section class="table-stock">
+                    <header>
+                        <p>Nome</p>
+                        <p>Categoria</p>
+                        <p>Preço</p>
+                        <p>Quantidade</p>
+                    </header>
+                    <div class="lines">
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="nome">
+                                <img src="../../assets/images/vacina.png" alt="">
+                                <p>Raiva</p>
+                            </div>
+                            <div class="categoria">
+                                <p>Vacina</p>
+                            </div>
+                            <div class="preco">
+                                <p>R$200,00</p>
+                            </div>
+                            <div class="quantidade">
+                                <p>20x</p>
+                                <button><img src="../../assets/images/edit.png" alt=""></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
+            <div class="modal-add-item">
+                <div class="close">X</div>
+                <h2>Adicione um item ao estoque</h2>
+                <form action="">
+                    <div class="table-add">
+                        <div class="colunm-item">
+                            <p>Nome</p>
+                            <input type="text">
+                        </div>
+                        <div class="colunm-item">
+                            <p>Categoria</p>
+                            <select name="" id="">
+                                <option value="">Selecione a categoria</option>
+                            </select>
+                        </div>
+                        <div class="colunm-item">
+                            <p>Preço</p>
+                            <input type="text">
+                        </div>
+                        <div class="colunm-item" style="border: none;">
+                            <p>Quantidade</p>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <button type="submit">Adicionar</button>
+                </form>
+            </div>
         </div>
     </main>
-    <script src="src/js/modalDashboard.js"></script>
-    <script src="src/js/sideBar.js"></script>
+    <script src="../js/modalEstoque.js"></script>
+    <script src="../js/modalDashboard.js"></script>
+    <script src="../js/sideBar.js"></script>
 </body>
 
 </html>
