@@ -76,16 +76,16 @@
                         <div class="item">
                             <div class="nome">
                                 <img src="../../assets/images/vacina.png" alt="">
-                                <p>Raiva</p>
+                                <p>Ração</p>
                             </div>
                             <div class="categoria">
-                                <p>Vacina</p>
+                                <p>Ração</p>
                             </div>
                             <div class="preco">
-                                <p>R$200,00</p>
+                                <p>R$100,00</p>
                             </div>
                             <div class="quantidade">
-                                <p>20x</p>
+                                <p>50x</p>
                                 <button><img src="../../assets/images/edit.png" alt=""></button>
                             </div>
                         </div>
@@ -268,37 +268,106 @@
                     </div>
                 </section>
             </main>
-            <div class="modal-add-item">
+            <div class="modal-add-item stock">
                 <div class="close">X</div>
                 <h2>Adicione um item ao estoque</h2>
-                <form action="">
+                <form action="" id="addStockItem">
                     <div class="table-add">
                         <div class="colunm-item">
                             <p>Nome</p>
-                            <input type="text">
+                            <input type="text" id="newItemName">
                         </div>
                         <div class="colunm-item">
                             <p>Categoria</p>
-                            <select name="" id="">
+                            <select name="" id="newItemCategory">
                                 <option value="">Selecione a categoria</option>
+                                <option value="1">Vacina</option>
+                                <option value="2">Ração</option>
+                                <option value="3">Medicamento</option>
                             </select>
                         </div>
                         <div class="colunm-item">
                             <p>Preço</p>
-                            <input type="text">
+                            <input type="number" id="newItemPrice">
                         </div>
                         <div class="colunm-item" style="border: none;">
                             <p>Quantidade</p>
-                            <input type="text">
+                            <input type="number" id="newItemQuantity">
                         </div>
                     </div>
                     <button type="submit">Adicionar</button>
                 </form>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <div class="modal-edit-item stock">
+                <div class="close">X</div>
+                <h2>Editar item do estoque</h2>
+                <form action="" id="editStockItem">
+                    <div class="table-edit">
+                        <div class="colunm-item">
+                            <p>Nome</p>
+                            <input type="text" id="editItemName">
+                        </div>
+                        <div class="colunm-item">
+                            <p>Categoria</p>
+                            <select name="" id="editItemCategory">
+                                <option value="">Selecione a categoria</option>
+                                <option value="1">Vacina</option>
+                                <option value="2">Ração</option>
+                                <option value="3">Medicamento</option>
+                            </select>
+                        </div>
+                        <div class="colunm-item">
+                            <p>Preço</p>
+                            <input type="number" id="editItemPrice">
+                        </div>
+                        <div class="colunm-item" style="border: none;">
+                            <p>Quantidade</p>
+                            <input type="number" id="editItemQuantity">
+                        </div>
+                    </div>
+                    <button type="submit">Confirmar</button>
+                </form>
+            </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
     </main>
     <script src="../js/modalEstoque.js"></script>
-    <script src="../js/modalDashboard.js"></script>
     <script src="../js/sideBar.js"></script>
 </body>
 

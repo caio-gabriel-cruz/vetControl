@@ -251,7 +251,19 @@
     background-color: var(--button);
 }
 
-.modal-add-item{
+
+
+
+
+
+
+
+
+
+
+
+
+.stock{
     min-width: 900px;
     max-height: 500px;
     position: fixed;
@@ -262,10 +274,13 @@
     background-color: var(--blue-800);
     color: var(--white);
     padding: 30px;
+}
+
+.modal-add-item{
     display: none;
 }
 
-.modal-add-item form {
+.stock form {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -273,7 +288,7 @@
     color: var(--white);
 }
 
-.modal-add-item form .table-add{
+.stock form .table-add, .stock form .table-edit{
     border-radius: 8px;
     display: flex;
     width: 100%;
@@ -281,7 +296,7 @@
     padding: 20px 10px 20px 10px;
 }
 
-.modal-add-item form .table-add .colunm-item{
+.stock form .table-add .colunm-item, .stock form .table-edit .colunm-item{
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -289,15 +304,15 @@
     align-items: center;
 }
 
-.modal-add-item form .table-add .colunm-item p{
+.stock form .table-add .colunm-item p, .stock form .table-edit .colunm-item p{
     margin-bottom: 20px;
 }
 
-.modal-add-item form .table-add .colunm-item input, .modal-add-item form .table-add select{
+.stock form .table-add .colunm-item input,  form .table-add select, .stock form .table-edit .colunm-item input,  form .table-edit select{
     padding: 4px;
 }
 
-.modal-add-item form button{
+.stock form button{
     margin-top: 50px;
     margin-bottom: 10px;
     margin-left: 20px;
@@ -311,6 +326,6 @@
     transition: 0.2s;
 }
 
-.modal-add-item button:hover{
+.stock button:hover{
     background-color: var(--button);
 }
